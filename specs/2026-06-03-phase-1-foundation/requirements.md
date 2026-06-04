@@ -18,14 +18,14 @@ All seven items from the roadmap are in scope for this phase:
 
 ## Key Decisions
 
-| Decision | Choice | Reason |
-|---|---|---|
-| Language | TypeScript (`react-ts` template) | Specified in tech-stack.md; starting with TS avoids a migration mid-project |
-| Styling | Tailwind CSS v4 | Specified in tech-stack.md; v4 has a different config model than v3 — use the v4 setup path |
-| Routing | React Router v7 | Specified in tech-stack.md; manual (non-file-based) routes for now |
-| Nav routes | `/`, `/projects`, `/resume` | Matches the three routes in the roadmap; each renders a bare placeholder page |
-| Deploy target | `vsaosuo.github.io` via `gh-pages` branch | GitHub Pages free tier; no custom domain at this stage |
-| CI trigger | Push to `main` | Lint + build must pass before anything is considered shippable |
+| Decision      | Choice                                    | Reason                                                                                      |
+| ------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Language      | TypeScript (`react-ts` template)          | Specified in tech-stack.md; starting with TS avoids a migration mid-project                 |
+| Styling       | Tailwind CSS v4                           | Specified in tech-stack.md; v4 has a different config model than v3 — use the v4 setup path |
+| Routing       | React Router v7                           | Specified in tech-stack.md; manual (non-file-based) routes for now                          |
+| Nav routes    | `/`, `/projects`, `/resume`               | Matches the three routes in the roadmap; each renders a bare placeholder page               |
+| Deploy target | `vsaosuo.github.io` via `gh-pages` branch | GitHub Pages free tier; no custom domain at this stage                                      |
+| CI trigger    | Push to `main`                            | Lint + build must pass before anything is considered shippable                              |
 
 ## Out of Scope
 

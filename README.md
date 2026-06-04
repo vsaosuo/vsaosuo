@@ -1,6 +1,7 @@
 ## Sour-Sdey (Or Hello) 👋
 
 This is Visal (or Vee-Sal) a recently grad in Computer Engineering. Feel free to follow me to get updates on my projects!
+
 <!--
 **vsaosuo/vsaosuo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

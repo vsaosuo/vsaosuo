@@ -46,7 +46,7 @@ Each group is a logical unit of work that can be committed together. Complete th
 
 ## 6. GitHub Pages deploy
 
-- Add `base` to `vite.config.ts` set to `"/"`  (or repo path if deploying to a sub-path)
+- Add `base` to `vite.config.ts` set to `"/"` (or repo path if deploying to a sub-path)
 - Add `public/404.html` with the standard SPA redirect trick for GitHub Pages so deep links work
 - Create `.github/workflows/deploy.yml`:
   - Trigger: push to `main`

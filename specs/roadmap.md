@@ -13,7 +13,7 @@ Goal: a live, empty shell on a real URL.
 - [ ] Set up ESLint + Prettier
 - [ ] Add React Router with placeholder routes (`/`, `/projects`, `/resume`)
 - [ ] Create base layout component (nav, footer)
-- [ ] Deploy to GitHub static and connect custom domain
+- [ ] Deploy to GitHub static
 - [ ] Add GitHub Actions CI: lint + build on push to `main`
 
 ---

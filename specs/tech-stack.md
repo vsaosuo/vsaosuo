@@ -2,12 +2,12 @@
 
 ## Core
 
-| Layer | Choice | Reason |
-|---|---|---|
-| UI framework | React 18 | Component model, ecosystem, familiar to most hiring managers |
-| Build tool | Vite | Fast HMR, minimal config, first-class React support |
-| Styling | Tailwind CSS v4 | Utility-first, no CSS file sprawl, easy responsive design |
-| Language | TypeScript | Type safety, better IDE support, industry-standard for production React projects |
+| Layer        | Choice          | Reason                                                                           |
+| ------------ | --------------- | -------------------------------------------------------------------------------- |
+| UI framework | React 18        | Component model, ecosystem, familiar to most hiring managers                     |
+| Build tool   | Vite            | Fast HMR, minimal config, first-class React support                              |
+| Styling      | Tailwind CSS v4 | Utility-first, no CSS file sprawl, easy responsive design                        |
+| Language     | TypeScript      | Type safety, better IDE support, industry-standard for production React projects |
 
 ## Responsiveness
 
@@ -66,11 +66,11 @@ Vite fingerprints and copies co-located images to `dist/` automatically on build
 
 ## Tooling
 
-| Tool | Purpose |
-|---|---|
-| ESLint + Prettier | Code style enforcement |
-| Vite Preview | Local production build preview |
-| GitHub Actions | CI: lint + build check on every push |
+| Tool              | Purpose                              |
+| ----------------- | ------------------------------------ |
+| ESLint + Prettier | Code style enforcement               |
+| Vite Preview      | Local production build preview       |
+| GitHub Actions    | CI: lint + build check on every push |
 
 ## What we are deliberately NOT using
 
