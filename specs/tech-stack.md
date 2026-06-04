@@ -9,6 +9,12 @@
 | Styling | Tailwind CSS v4 | Utility-first, no CSS file sprawl, easy responsive design |
 | Language | TypeScript | Type safety, better IDE support, industry-standard for production React projects |
 
+## Responsiveness
+
+- Mobile-first design — Tailwind's responsive prefixes (`sm:`, `md:`, `lg:`) applied from smallest breakpoint up
+- Target: fully functional and readable on phones (≥ 375px) through wide desktop (≤ 1440px)
+- No separate mobile/desktop codepaths — one layout that adapts via CSS
+
 ## Routing
 
 - React Router v7 (file-based or manual routes) for multi-page navigation
