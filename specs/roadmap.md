@@ -33,15 +33,15 @@ Goal: a visitor can learn who Visal is, see real work, and make contact.
 
 ---
 
-## Phase 3 — Polish
+## Phase 3 — Polish ✓
 
 Goal: the site feels intentional, fast, and memorable.
 
-- [ ] **Scroll animations** — subtle entrance animations with Framer Motion (respect `prefers-reduced-motion`)
-- [ ] **Dark mode** — Tailwind `dark:` classes, preference persisted in `localStorage`
-- [ ] **Mobile nav** — hamburger menu with smooth open/close
-- [ ] **Project detail pages** — `/projects/:slug` with longer write-ups
-- [ ] **Blog** — MDX posts in `src/posts/<slug>/index.mdx`; post images co-located in the same folder and imported as modules; `@mdx-js/rollup` Vite plugin for build-time processing
-- [ ] **SEO** — sitemap, canonical tags, structured data (JSON-LD Person schema)
+- [x] **Scroll animations** — subtle entrance animations with Framer Motion (respect `prefers-reduced-motion`)
+- [x] **Dark mode** — Tailwind `dark:` classes, preference persisted in `localStorage`
+- [x] **Mobile nav** — hamburger menu with smooth open/close
+- [x] **Project detail pages** — `/projects/:slug` with MDX write-ups; same folder-per-project architecture as blog
+- [x] **Blog** — MDX posts in `src/posts/<slug>/index.mdx`; post images co-located in the same folder and imported as modules; `@mdx-js/rollup` Vite plugin for build-time processing
+- [x] **SEO** — sitemap, canonical tags, structured data (JSON-LD Person schema)
 - [ ] **Performance audit** — Lighthouse ≥ 90 on all four categories
-- [ ] **Analytics** — Plausible or Fathom (privacy-first, no cookie banner needed)
+- [x] **Analytics** — Plausible (privacy-first, no cookie banner needed)

@@ -1,0 +1,35 @@
+---
+title: Bench Power Supply PCB
+description: >-
+  Custom adjustable bench power supply (1.25 V – 30 V, 3 A) designed in KiCad.
+  Features an LM2596 buck converter, current-limiting circuitry, and a
+  7-segment display for live voltage readout.
+tags:
+  - KiCad
+  - PCB Design
+  - Power Electronics
+  - Analog
+github: https://github.com/vsaosuo
+---
+
+## Motivation
+
+Commercial bench supplies in the sub-$50 range have terrible output regulation and noisy switching. Designing a custom board was partly a learning exercise in PCB layout and partly an attempt to build something better than what's available cheaply.
+
+## Topology
+
+The design is a synchronous buck converter built around the LM2596 switching regulator. Output voltage is set by a 10-turn potentiometer on the feedback divider, giving fine-grained control from 1.25 V to approximately 30 V.
+
+A second feedback path through an op-amp comparator implements current limiting — when the sense resistor voltage exceeds a threshold set by a second potentiometer, the comparator pulls the enable pin low and the regulator shuts down until the fault clears.
+
+## Display and Readout
+
+The 7-segment display is a 4-digit common-cathode unit driven by a PIC16F1503. The PIC reads the output voltage via its ADC, scales it to millivolts, and multiplexes the digits at 500 Hz to avoid visible flicker. The display module communicates over a 2-wire I2C bus, making it separable from the main board.
+
+## Layout Challenges
+
+The main PCB layout challenge was thermal: the LM2596 can dissipate up to 1.5 W at full load, so the copper pour around the exposed pad needed to be large enough to keep the junction temperature under 125°C. Using the thermal resistance formulas from the datasheet, I added a 25 × 25 mm copper fill with thermal vias to the back copper. In testing, the junction runs at roughly 80°C at 3 A — within spec.
+
+## What I'd Do Differently
+
+Always run DRC before ordering boards. The first revision had a trace width violation on the high-current path that wasn't caught until the board arrived and one trace browned under load. The second revision fixed the trace widths and added a fused input, which should have been there from the start.

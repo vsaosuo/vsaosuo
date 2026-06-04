@@ -1,0 +1,36 @@
+---
+title: Embedded Sensor Datalogger
+description: >-
+  Low-power IoT datalogger built on STM32 with FreeRTOS. Samples temperature,
+  humidity, and pressure at configurable intervals, stores to SD card in CSV,
+  and streams over BLE to a companion mobile app.
+tags:
+  - C
+  - STM32
+  - FreeRTOS
+  - BLE
+  - IoT
+github: https://github.com/vsaosuo
+---
+
+## Design Goals
+
+The datalogger was built around two competing constraints: long battery life (target 30-day operation on 2× AA cells) and reliable data capture with no missed samples. Meeting both required careful power domain management and a real-time task architecture.
+
+## Hardware
+
+The system runs on an STM32L476, chosen for its ultra-low-power peripheral set and the ability to run the core at 4 MHz from the MSI clock when throughput requirements are low. In idle mode the device draws under 10 µA — the dominant power consumers are the Bluetooth module and SD card writes.
+
+## Task Architecture
+
+FreeRTOS runs four tasks. A sensor task wakes every configurable interval (default 60 s), polls the BME280 over I2C, and posts the readings to a queue. A logger task drains the queue and appends rows to a CSV file on the SD card via FatFS. A BLE task maintains the GATT server and pushes notifications to any connected central. A watchdog task pats the IWDG and monitors heap usage, logging a warning when free heap drops below 10%.
+
+## BLE Implementation
+
+The BLE stack uses the BlueNRG-2 module's SPI host interface. The GATT profile exposes three characteristics — temperature, humidity, pressure — as notifiable read characteristics. A companion iOS app subscribes to all three and plots rolling time-series charts.
+
+## Power Management
+
+This was the hardest part. The STM32's STOP2 low-power mode turns off most clocks but keeps the RTC running. The sensor and logger tasks gate on an RTC alarm, which wakes the processor from STOP2 through a dedicated RTC interrupt line. Getting the FreeRTOS tickless idle to cooperate with STOP2 entry required a custom low-power timer driver that reprograms the RTC alarm each time the OS enters idle.
+
+The result: average current draw of ~180 µA during active sample cycles and under 10 µA during sleep, giving a projected 35-day runtime on 2×AA alkaline cells.
