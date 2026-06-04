@@ -18,18 +18,18 @@ Goal: a live, empty shell on a real URL.
 
 ---
 
-## Phase 2 — Content
+## Phase 2 — Content ✓
 
 Goal: a visitor can learn who Visal is, see real work, and make contact.
 
-- [ ] **Hero section** — name, one-line bio, CTA buttons (resume, GitHub, LinkedIn)
-- [ ] **About section** — short narrative, photo, what Visal is currently working on
-- [ ] **Projects section** — 3–5 featured projects with title, description, tech tags, links
-- [ ] **Skills section** — grouped by category (languages, tools, hardware/software)
-- [ ] **Resume page** — embedded PDF viewer + download link
-- [ ] **Contact section** — email link, social links (GitHub, LinkedIn)
-- [ ] **Project data file** — `src/data/projects.js` as source of truth
-- [ ] **Favicon + meta tags** — OG image, title, description for sharing
+- [x] **Hero section** — name, one-line bio, CTA buttons (resume, GitHub, LinkedIn)
+- [x] **About section** — short narrative, photo placeholder, what Visal is currently working on
+- [x] **Projects section** — 3–5 featured projects with title, description, tech tags, links
+- [x] **Skills section** — grouped by category (languages, tools, hardware/software)
+- [x] **Resume page** — embedded PDF viewer + download link
+- [x] **Contact section** — email link, social links (GitHub, LinkedIn)
+- [x] **Project data file** — `src/data/projects.ts` as source of truth
+- [x] **Favicon + meta tags** — OG image, title, description for sharing
 
 ---
 
