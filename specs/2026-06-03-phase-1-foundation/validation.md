@@ -7,7 +7,7 @@ Phase 1 is done when every check below passes. No partial credit — if the live
 ## 1. Live URL
 
 - `https://vsaosuo.github.io` loads without a browser error (404, blank white screen, or MIME-type failure)
-- The page title is visible (even if it's just the default Vite title for now)
+- The page title reads "Visal Saosuo" (set in `index.html`)
 - Navigating to `/projects` and `/resume` directly (hard refresh) returns the app, not a GitHub 404 page — confirming the SPA redirect is working
 
 ## 2. Navigation
@@ -24,7 +24,7 @@ Phase 1 is done when every check below passes. No partial credit — if the live
 ## 4. Lint
 
 - `npm run lint` exits 0 — no ESLint errors or warnings that are set to error
-- `npm run format -- --check` (or equivalent Prettier check) exits clean
+- `npm run format:check` exits clean
 
 ## 5. Build
 
@@ -47,7 +47,7 @@ Phase 1 is done when every check below passes. No partial credit — if the live
 
 The following are intentionally out of scope and should not be used as blockers:
 
-- Real content of any kind
+- Real written copy, photo, or resume PDF — mock data in `src/data/` is a preview stand-in, not a Phase 2 deliverable
 - Lighthouse score targets (Phase 3)
 - Mobile nav / dark mode (Phase 3)
 - Custom domain (future, no code change needed)
