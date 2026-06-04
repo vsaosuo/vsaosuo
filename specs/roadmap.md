@@ -4,17 +4,17 @@ Phased from foundation to polish. Each phase should be releasable — never bloc
 
 ---
 
-## Phase 1 — Foundation
+## Phase 1 — Foundation ✓
 
 Goal: a live, empty shell on a real URL.
 
-- [ ] Init Vite + React project (`npm create vite@latest`)
-- [ ] Install and configure Tailwind CSS v4
-- [ ] Set up ESLint + Prettier
-- [ ] Add React Router with placeholder routes (`/`, `/projects`, `/resume`)
-- [ ] Create base layout component (nav, footer)
-- [ ] Deploy to GitHub static
-- [ ] Add GitHub Actions CI: lint + build on push to `main`
+- [x] Init Vite + React project (`npm create vite@latest`)
+- [x] Install and configure Tailwind CSS v4
+- [x] Set up ESLint + Prettier
+- [x] Add React Router with placeholder routes (`/`, `/projects`, `/resume`)
+- [x] Create base layout component (nav, footer)
+- [x] Deploy to GitHub static
+- [x] Add GitHub Actions CI: lint + build on push to `main`
 
 ---
 
