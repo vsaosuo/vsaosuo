@@ -1,0 +1,38 @@
+---
+title: This Portfolio
+description: >-
+  Personal portfolio site built with Vite, React 19, TypeScript, and Tailwind
+  CSS v4. Deployed to GitHub Pages via GitHub Actions. You are looking at it.
+tags:
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - Vite
+  - GitHub Actions
+github: https://github.com/vsaosuo
+live: https://vsaosuo.github.io
+---
+
+## Motivation
+
+Building a portfolio in public is a good forcing function. Every design decision is visible to the people you're trying to impress, which keeps scope creep in check.
+
+## Stack
+
+The stack is deliberately minimal: Vite for fast builds, React 19 for the component model (and its new document metadata hoisting which replaces react-helmet), Tailwind CSS v4 for utility-first styling without a separate CSS file, and TypeScript throughout. There are no UI component libraries — every element is hand-rolled with Tailwind utilities so the design is distinct rather than looking like a shadcn clone.
+
+Deployment is GitHub Pages via GitHub Actions. A workflow triggers on every push to `main`: it installs dependencies, runs ESLint, builds the Vite output, and deploys the `dist/` directory to the `gh-pages` branch. The full pipeline runs in about 45 seconds.
+
+## Phased Development
+
+Development was structured in three phases:
+
+- **Phase 1 — Foundation**: live URL, routing, CI pipeline.
+- **Phase 2 — Content**: every section filled with real information — hero, about, projects, skills, resume, contact.
+- **Phase 3 — Polish**: dark mode, mobile nav, scroll animations, MDX-driven blog and project detail pages, SEO, and Plausible analytics.
+
+## MDX Content Pipeline
+
+Both blog posts and project write-ups (including this one) are stored as MDX files with co-located images. `@mdx-js/rollup` processes them at build time, `remark-frontmatter` + `remark-mdx-frontmatter` export frontmatter as typed named exports, and `import.meta.glob` builds the manifest automatically — no hand-maintained import list anywhere.
+
+This means adding a new blog post or project is a single file operation: create the folder, write the MDX, done.

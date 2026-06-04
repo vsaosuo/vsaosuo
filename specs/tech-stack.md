@@ -57,6 +57,27 @@ src/posts/
 
 Vite fingerprints and copies co-located images to `dist/` automatically on build.
 
+## Project Content
+
+Same MDX architecture as blog posts — each project is a folder under `src/projects/` with an `index.mdx` and any co-located images:
+
+```
+src/projects/
+├── fpga-synthesizer/
+│   ├── index.mdx
+│   └── block-diagram.webp
+├── embedded-datalogger/
+│   └── index.mdx
+└── pcb-power-supply/
+    ├── index.mdx
+    └── board-render.webp
+```
+
+- Frontmatter carries all project metadata (`title`, `description`, `tags`, `github`, `live`) — no separate data file.
+- `src/lib/projects.ts` uses `import.meta.glob` to build the project manifest at build time.
+- Display order is explicit: an `ORDER` array in `src/lib/projects.ts` controls listing sequence (projects have no publication date to sort on).
+- `src/lib/posts.ts` follows the same pattern for blog content.
+
 ## Assets & Media
 
 - Global static assets (favicon, resume PDF, OG image): `public/` — copied verbatim to `dist/`

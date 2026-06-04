@@ -1,0 +1,31 @@
+---
+title: Hello, World
+date: '2026-06-03'
+description: >-
+  Launching the blog section of this portfolio — what it's for, why MDX, and
+  what I plan to write about.
+---
+
+This portfolio has been live for a few months now, and I've been putting off the blog section. Today it's finally here.
+
+## Why a blog?
+
+The short answer: writing makes you think harder. When I document a project or explain a concept, I always discover something I didn't fully understand. The blog forces that process to happen in public, which raises the stakes just enough to be useful.
+
+The longer answer is that a portfolio of finished projects only shows outcomes. A blog can show the process — the wrong turns, the interesting sub-problems, the choices that weren't obvious at the time. That's more useful for someone trying to understand how I think than a polished project card with a GitHub link.
+
+## The MDX setup
+
+Posts on this site are MDX files. Each post lives in its own folder under `src/posts/<slug>/` with an `index.mdx` file and any images co-located in the same directory. The MDX is processed at build time by `@mdx-js/rollup`, so the output is static HTML — no runtime markdown parser.
+
+Frontmatter (title, date, description) is extracted by `remark-frontmatter` and `remark-mdx-frontmatter`, which export it as a named `frontmatter` export from each MDX module. Vite's `import.meta.glob` collects all posts at build time into a sorted listing.
+
+## What's coming
+
+A few posts I plan to write:
+
+- A deeper look at the FPGA synthesizer — specifically the DDS architecture and the voice allocation policy
+- Notes on the FreeRTOS tickless idle implementation for the sensor datalogger
+- Lessons from designing a two-layer PCB for the first time
+
+If any of those sound interesting, the RSS feed isn't set up yet (soon), but you can check back here.

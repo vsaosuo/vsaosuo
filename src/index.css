@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/* Use class-based dark mode so JS can toggle .dark on <html> */
+@variant dark (&:where(.dark, .dark *));
 
 body {
   margin: 0;
