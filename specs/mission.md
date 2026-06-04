@@ -10,12 +10,12 @@ This portfolio serves three equally weighted purposes:
 
 ## Core audience
 
-| Audience | What they need to see |
-|---|---|
-| Recruiters / hiring managers | Skills, projects, resume, contact |
-| Developers / makers | Interesting builds, process, honesty |
-| Collaborators / clients | Reliability, taste, communication style |
+| Audience                     | What they need to see                   |
+| ---------------------------- | --------------------------------------- |
+| Recruiters / hiring managers | Skills, projects, resume, contact       |
+| Developers / makers          | Interesting builds, process, honesty    |
+| Collaborators / clients      | Reliability, taste, communication style |
 
 ## North-star principle
 
-Every design and content decision should ask: *does this help someone understand who Visal is and what he can build?* If not, cut it.
+Every design and content decision should ask: _does this help someone understand who Visal is and what he can build?_ If not, cut it.
