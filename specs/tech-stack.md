@@ -23,20 +23,37 @@
 ## Deployment
 
 - **Primary:** GitHub Pages — free static hosting, no vendor lock-in, served from the repo itself
-- **Deploy target:** `gh-pages` branch; GitHub Actions builds and pushes `dist/` on every push to `main`
-- **Domain:** `vsaosuo.github.io` (or a custom domain via `CNAME` in `public/`)
-- **Build output** (`dist/`) maps to what GitHub Pages requires at the root:
+- **Method:** GitHub Actions (recommended by GitHub over branch-based deployment) — workflow defined in `.github/workflows/deploy.yml` builds on every push to `main` and publishes to the `gh-pages` branch via `peaceiris/actions-gh-pages`
+- **Live URL:** `https://vsaosuo.github.io/vsaosuo/` — served under the `/vsaosuo/` sub-path because the repo name is `vsaosuo` (not a `<username>.github.io` repo)
+- **Custom domain:** optional — add a `CNAME` file to `public/` and configure DNS; would change the base path to `/`
+- **Not using Jekyll** — GitHub Pages defaults to Jekyll processing, but this is a Vite/React site. Jekyll is bypassed by including a `.nojekyll` file at the repo root (added automatically by `peaceiris/actions-gh-pages`)
+
+### Vite `base` path requirement
+
+Because the site is served at `/vsaosuo/` (not `/`), Vite must be told the sub-path so it generates correct asset URLs:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  base: '/vsaosuo/',
+  ...
+})
+```
+
+Without this, bundled JS/CSS assets resolve to `vsaosuo.github.io/assets/...` (root) instead of `vsaosuo.github.io/vsaosuo/assets/...` and 404. If a custom domain is ever added, revert `base` to `'/'`.
+
+### Build output structure
 
 ```
-vsaosuo.github.io/
-├── index.html       ← Vite entry point
+vsaosuo.github.io/vsaosuo/
+├── index.html              ← Vite entry point
 ├── assets/
-│   ├── index-[hash].js    ← bundled JS (React + app code)
-│   └── index-[hash].css   ← bundled Tailwind output
+│   ├── index-[hash].js     ← bundled JS (React + app code)
+│   └── index-[hash].css    ← bundled Tailwind output
 └── ...static assets (images, favicon, etc.)
 ```
 
-> Vite produces this structure automatically. The GitHub Actions deploy step copies `dist/` contents to the `gh-pages` branch root so `index.html` is served at `/`.
+> GitHub Pages sites are publicly accessible even if the source repository is private — never commit secrets or sensitive data.
 
 ## Blog Content
 
