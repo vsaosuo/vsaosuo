@@ -6,6 +6,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 export default defineConfig({
+  base: '/',
   plugins: [
     // MDX must run before React so JSX is already resolved when React plugin sees it
     {
